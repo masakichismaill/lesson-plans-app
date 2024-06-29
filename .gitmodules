@@ -1,0 +1,3 @@
+[submodule "lesson-plans-app"]
+    path = lesson-plans-app
+    url = <repository-url>
