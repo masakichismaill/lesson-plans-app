@@ -3,6 +3,8 @@ const router = express.Router();
 const authController = require('../controllers/authController'); // コントローラーのインポート
 
 // ユーザー登録ルート
-router.post('/register', authController.register); // register関数をコントローラーから呼び出す
+router.post('/register', authController.register); // 登録用ルート
+// ユーザーログインルート
+router.post('/login', authController.login); //ログイン用ルート
 
 module.exports = router;
