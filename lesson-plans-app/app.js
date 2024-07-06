@@ -9,20 +9,20 @@ app.use(express.json()); // リクエストのJSONパース
 app.use(express.urlencoded({ extended: true })); // URLエンコードされたデータのパース
 
 // MongoDBに接続
-mongoose.connect('mongodb+srv://masakichi:OEUiPs3hSI3BawqN@lesson-plans-cluster.c8rcmf4.mongodb.net/?retryWrites=true&w=majority&appName=lesson-plans-cluster', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-}).then(() => {
-    console.log('MongoDBに接続されました'); // 接続成功時のログ
-}).catch((err) => {
-    console.error('MongoDBへの接続に失敗しました', err); // 接続失敗時のログ
-});
+mongoose.connect('mongodb+srv://masakichi:OEUiPs3hSI3BawqN@lesson-plans-cluster.c8rcmf4.mongodb.net/?retryWrites=true&w=majority&appName=lesson-plans-cluster')
+    .then(() => {
+        console.log('MongoDBに接続されました');
+    })
+    .catch((err) => {
+        console.error('MongoDBへの接続に失敗しました', err);
+    });
+
 
 // ルートの設定
 app.use('/auth', authRoutes); // /authへのリクエストをauthRoutesにルーティング
 
 app.get('/', (req, res) => {
-    res.send('こんにちは!'); // ルートへのアクセスに対してHello Worldを返す
+    res.send('こんにちは!'); // ルートへのアクセスに対してこんにちは！を返す
 });
 // register.htmlを表示するルートを追加
 app.get('/register', (req, res) => {

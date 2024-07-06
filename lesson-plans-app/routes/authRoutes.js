@@ -6,5 +6,6 @@ const authController = require('../controllers/authController'); // コントロ
 router.post('/register', authController.register); // 登録用ルート
 // ユーザーログインルート
 router.post('/login', authController.login); //ログイン用ルート
-
+// ユーザーログアウトルート
+router.post('/logout', authController.logout); //ログアウト用ルート
 module.exports = router;
